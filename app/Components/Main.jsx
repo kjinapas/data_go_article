@@ -62,7 +62,7 @@ export default function Main() {
           <div className="container max-w-6xl p-6 mx-auto space-y-4 sm:space-y-12">
             <div className="flex justify-center flex-wrap gap-2 p-2 max-w-full mx-auto my-4 text-sm">
               <button
-                key="all" // Add a key for React
+                key="all" 
                 className={`px-2 py-1 rounded  ${selectedType === '' ? 'bg-gray-300' : 'bg-gray-200/50'} text-gray-700`} // Conditional styling for 'All'
                 onClick={() => setSelectedType('')}
               >
@@ -70,7 +70,7 @@ export default function Main() {
               </button>
               {uniqueType.map((type, index) => (
                 <button key={index}
-                  className="px-2 py-1 rounded bg-gray-200/50 text-gray-700 hover:bg-gray-300"
+                  className="px-2 py-1 rounded bg-gray-200/50 text-gray-700 hover:bg-gray-300 focus:bg-blue-200"
                   onClick={() => setSelectedType(type)}>
                   {type}
                 </button>
