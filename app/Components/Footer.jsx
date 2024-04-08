@@ -5,7 +5,7 @@ export default function Footer() {
     <div className="text-center">
   <Link
     href="/"
-    className="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
+    className="flex items-center justify-center mb-5 text-md font-semibold text-gray-900 dark:text-white"
   >
    
    Open Government Data of Thailand

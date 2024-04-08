@@ -1,11 +1,10 @@
 "use client"
 
-import React, { Suspense } from "react";
+import React from "react";
 
 import Footer from "./Components/Footer";
 import "../app/globals.css";
 
-import Loading from "./Loading";
 
 export default function RootLayout({ children}) {
   
@@ -14,9 +13,9 @@ export default function RootLayout({ children}) {
     <html lang="en">
       <body >
 
-    <Suspense fallback={<Loading/>}>
+    
         {children}
-        </Suspense>
+
     <Footer/>
         </body>
     </html>

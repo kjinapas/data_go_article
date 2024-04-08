@@ -10,10 +10,11 @@ export default async function Page({params}) {
 			'api-key': process.env.API_KEY 
 		  };
 
-		const data_details = await axios.get(`https://opend.data.go.th/get-ckan/datastore_search?resource_id=f00d52f1-7c98-417b-9a70-5c64b6c46d9b&q=${id}`,
+		const data_details = await axios.get(`https://opend.data.go.th/get-ckan/datastore_search_sql?sql=SELECT title,category,img_link,_id,date,detail from "f00d52f1-7c98-417b-9a70-5c64b6c46d9b" where _id = ${id}`,
 		{ headers: headers })
 		
-		const Results = data_details.data.result.records[0]
+		const Results2 = data_details.data.result.records
+		const Results = Results2[0]
 		const img_result = Results.img_link.split(',')
 		
   return (
@@ -33,7 +34,7 @@ export default async function Page({params}) {
 	  {img_result.length>0?
 	  Results.img_link.split(',').map((img_url,keys) => (
 		
-		<Image key={keys}
+		<img key={keys}
 		src={img_url}
 		alt="Featured image"
 		width={500}
